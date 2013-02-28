@@ -1,0 +1,11 @@
+{
+  "name": "jed.jit.su",
+  "subdomain": "jed",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "0.8.x"
+  }
+}
