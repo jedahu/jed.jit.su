@@ -1,7 +1,7 @@
 {
   "name": "jed.jit.su",
   "subdomain": "jed",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "start": "node server.js"
   },
@@ -10,5 +10,9 @@
   },
   "dependencies": {
     "node-static": "~0.6.7"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.0rc8",
+    "grunt-bump": "git://github.com/vojtajina/grunt-bump.git#0f4d27b770b523fa7a21a10fe8e991e0c62782bc"
   }
 }
