@@ -1,7 +1,11 @@
 {
   "name": "jed.jit.su",
   "subdomain": "jed",
-  "version": "0.0.12",
+  "version": "0.0.14",
+  "domains": [
+    "jedahu.net",
+    "www.jedahu.net"
+  ],
   "scripts": {
     "start": "node server.js"
   },
@@ -13,6 +17,7 @@
   },
   "devDependencies": {
     "grunt": "~0.4.0rc8",
-    "grunt-bump": "git://github.com/vojtajina/grunt-bump.git#0f4d27b770b523fa7a21a10fe8e991e0c62782bc"
+    "grunt-bump": "git://github.com/vojtajina/grunt-bump.git#0f4d27b770b523fa7a21a10fe8e991e0c62782bc",
+    "datauri": "~0.1.1"
   }
 }

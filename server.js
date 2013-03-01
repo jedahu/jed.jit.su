@@ -1,15 +1,20 @@
 /* !meta
-{ "title": "A simple dev server"
+{ "title": "A simple server"
 , "author": "Jeremy Hughes <jedahu@gmail.com>"
-, "date": "2013-01
+, "date": "2013-02
 }
 */
-var static = require('node-static');
-var file = new static.Server('.');
 var http = require('http');
-
-http.createServer(function(request, response) {
-  request.addListener('end', function() {
-    file.serve(request, response);
-  });
-}).listen(8080);
+var url = require('url');
+var send = require('send');
+var app = http.createServer(function(req, res) {
+  function redirect() {
+    res.statusCode = 301;
+    res.setHeader('Location', req.url + '/');
+    res.end('Redirecting to ' + req.url + '/');
+  }
+  send(req, url.parse(req.url).pathname)
+    .root('static')
+    .on('directory', redirect)
+    .pipe(res);
+}).listen(3000);
