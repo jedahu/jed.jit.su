@@ -1,6 +1,6 @@
 {
   "name": "jed.jit.su",
-  "version": "0.0.17",
+  "version": "0.0.18-2",
   "dependencies": {
     "send": {
       "version": "0.1.0",
@@ -19,9 +19,96 @@
         }
       }
     },
+    "poet": {
+      "version": "0.2.4",
+      "dependencies": {
+        "node-markdown": {
+          "version": "0.1.1"
+        },
+        "json-front-matter": {
+          "version": "0.1.3"
+        },
+        "front-matter": {
+          "version": "0.1.1",
+          "dependencies": {
+            "yaml-js": {
+              "version": "0.0.5"
+            }
+          }
+        }
+      }
+    },
+    "express": {
+      "version": "3.1.0",
+      "dependencies": {
+        "connect": {
+          "version": "2.7.2",
+          "dependencies": {
+            "qs": {
+              "version": "0.5.1"
+            },
+            "formidable": {
+              "version": "1.0.11"
+            },
+            "bytes": {
+              "version": "0.1.0"
+            },
+            "pause": {
+              "version": "0.0.1"
+            }
+          }
+        },
+        "commander": {
+          "version": "0.6.1"
+        },
+        "range-parser": {
+          "version": "0.0.4"
+        },
+        "mkdirp": {
+          "version": "0.3.3"
+        },
+        "cookie": {
+          "version": "0.0.5"
+        },
+        "buffer-crc32": {
+          "version": "0.1.1"
+        },
+        "fresh": {
+          "version": "0.1.0"
+        },
+        "methods": {
+          "version": "0.0.1"
+        },
+        "cookie-signature": {
+          "version": "0.0.1"
+        },
+        "debug": {
+          "version": "0.7.2"
+        }
+      }
+    },
+    "jade": {
+      "version": "0.28.2",
+      "dependencies": {
+        "commander": {
+          "version": "0.6.1"
+        },
+        "mkdirp": {
+          "version": "0.3.5"
+        }
+      }
+    },
     "grunt-bump": {
       "version": "0.0.1",
       "from": "git://github.com/vojtajina/grunt-bump.git#0f4d27b770b523fa7a21a10fe8e991e0c62782bc"
+    },
+    "datauri": {
+      "version": "0.1.1",
+      "dependencies": {
+        "lodash": {
+          "version": "1.0.1"
+        }
+      }
     },
     "grunt": {
       "version": "0.4.0rc8",
