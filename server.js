@@ -4,17 +4,32 @@
 , "date": "2013-02
 }
 */
-var http = require('http');
-var url = require('url');
-var send = require('send');
-var app = http.createServer(function(req, res) {
-  function redirect() {
-    res.statusCode = 301;
-    res.setHeader('Location', req.url + '/');
-    res.end('Redirecting to ' + req.url + '/');
-  }
-  send(req, url.parse(req.url).pathname)
-    .root('static')
-    .on('directory', redirect)
-    .pipe(res);
-}).listen(3000);
+var express = require('express');
+var app = express();
+var legacy = express();
+var poet = require('poet')(app);
+
+legacy.all('*', function(req, res) {
+  console.log(req.path);
+  res.redirect('http://jedahu.net' + req.path);
+});
+
+poet
+  .set({
+    posts: './posts/',
+    postsPerPage: 10,
+    metaFormat: 'yaml',
+  })
+  .createPostRoute('/post/:post', 'post')
+  .createPageRoute('/pagination/:page', 'page')
+  .createTagRoute('/tag/:tag', 'tag')
+  .createCategoryRoute('/category/:category', 'category')
+  .init(function(locals) {})
+
+app.set('view engine', 'jade');
+app.set('views', __dirname + '/views');
+app.use(express.vhost('log.jedahu.net', legacy));
+app.use(express.static(__dirname + '/static'));
+app.use(poet.middleware());
+app.use(app.router);
+app.listen(3000);
