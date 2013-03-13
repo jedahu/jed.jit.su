@@ -4,7 +4,8 @@
   "version": "0.0.18",
   "domains": [
     "jedahu.net",
-    "www.jedahu.net"
+    "www.jedahu.net",
+    "log.jedahu.net"
   ],
   "scripts": {
     "start": "node server.js"
