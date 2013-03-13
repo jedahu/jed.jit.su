@@ -93,7 +93,7 @@ future methods on `object`.
 
 Smart, or at least willing to learn new things.
 
-*12. No whiners!* Try educating a bunch of Java programmers in the
+*12. No whiners!* Try educating a bunch of Blub programmers in the
 utility of higher order functions or tail-recursion...
 
 *13. Macros, syntax, and combinators, oh my!* If you don’t whine, you
