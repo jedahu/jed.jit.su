@@ -8,6 +8,7 @@ var express = require('express');
 var app = express();
 var legacy = express();
 var poet = require('poet')(app);
+var markdown = require('markdown').markdown;
 
 legacy.all('*', function(req, res) {
   console.log(req.path);
@@ -20,6 +21,10 @@ poet
     postsPerPage: 100,
     metaFormat: 'yaml',
     readMoreLink: function(post) { return ''; }
+  })
+  .addTemplate({
+    ext: 'md',
+    fn: function(text) { return markdown.toHTML(text, 'Maruku'); }
   })
   .createPostRoute('/log/:post', 'post')
   .createPageRoute('/pagination/:page', 'page')

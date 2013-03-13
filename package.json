@@ -1,7 +1,7 @@
 {
   "name": "jed.jit.su",
   "subdomain": "jed",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "domains": [
     "jedahu.net",
     "www.jedahu.net",
@@ -17,7 +17,8 @@
     "send": "~0.1.0",
     "poet": "~0.2.4",
     "express": "~3.1.0",
-    "jade": "~0.28.2"
+    "jade": "~0.28.2",
+    "markdown": "~0.4.0"
   },
   "devDependencies": {
     "grunt": "~0.4.0rc8",

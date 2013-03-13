@@ -1,6 +1,6 @@
 {
   "name": "jed.jit.su",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "dependencies": {
     "send": {
       "version": "0.1.0",
@@ -95,6 +95,19 @@
         },
         "mkdirp": {
           "version": "0.3.5"
+        }
+      }
+    },
+    "markdown": {
+      "version": "0.4.0",
+      "dependencies": {
+        "nopt": {
+          "version": "1.0.10",
+          "dependencies": {
+            "abbrev": {
+              "version": "1.0.4"
+            }
+          }
         }
       }
     },
