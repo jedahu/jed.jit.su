@@ -16,12 +16,12 @@ legacy.all('*', function(req, res) {
 
 poet
   .set({
-    posts: './posts/',
+    posts: './log/',
     postsPerPage: 100,
     metaFormat: 'yaml',
     readMoreLink: function(post) { return ''; }
   })
-  .createPostRoute('/post/:post', 'post')
+  .createPostRoute('/log/:post', 'post')
   .createPageRoute('/pagination/:page', 'page')
   .createTagRoute('/tag/:tag', 'tag')
   .createCategoryRoute('/category/:category', 'category')
@@ -32,6 +32,6 @@ app.set('views', __dirname + '/views');
 app.use(express.vhost('log.jedahu.net', legacy));
 app.use(express.static(__dirname + '/static'));
 app.use(poet.middleware());
-app.get('/post', function(req, res) { res.render('index'); });
+app.get('/log', function(req, res) { res.render('index'); });
 app.use(app.router);
 app.listen(3000);
