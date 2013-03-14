@@ -3,25 +3,27 @@ html
   head
     title= 'Jeremy Hughes'
     meta(charset='utf-8')
-    link(rel='stylesheet', href='/bootstrap.css')
+    link(rel='stylesheet', href='/main.css')
+    link(rel='stylesheet', href='/rainbow.css')
+    script(defer, src='https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=true&lang=basic&lang=css&lang=clj&lang=hs&lang=yaml')
   body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          a.brand(href='/') Home
-    .wrap
-      .container
-        .row
-          .span8
-            block content
-          .span4
-            .well.sidebar-nav
-              ul.nav.nav-list
-                li.nav-header categories
-                - each cat in categoryList
-                  li
-                    a(href=categoryUrl(cat)) #{cat}
-                li.nav-header tags
-                - each tag in tagList
-                  li
-                    a(href=tagUrl(tag)) #{tag}
+    nav.main
+      ul
+        li
+          a(href='/') jedahu.net
+        li
+          a(href='/log') log
+    div.content
+      block content
+    nav.tags
+      h1 all tags
+      ul
+        - each tag in tagList.sort()
+          li
+            a(href=tagUrl(tag)) #{tag}
+    script
+      var pres = document.getElementsByTagName('pre');
+      var i;
+      for (i = 0; i < pres.length; ++i) {
+        pres[i].classList.add('prettyprint');
+      }

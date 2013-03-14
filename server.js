@@ -9,6 +9,8 @@ var app = express();
 var legacy = express();
 var poet = require('poet')(app);
 var markdown = require('markdown').markdown;
+var stylus = require('stylus');
+var nib = require('nib');
 
 legacy.all('*', function(req, res) {
   console.log(req.path);
@@ -32,9 +34,22 @@ poet
   .createCategoryRoute('/category/:category', 'category')
   .init(function(locals) {})
 
+function compileStyl(str, path) {
+  return stylus(str)
+    .set('filename', path)
+    .set('compress', true)
+    .use(nib());
+}
+
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 app.use(express.vhost('log.jedahu.net', legacy));
+app.use(stylus.middleware({
+  src: __dirname + '/stylus',
+  dest: __dirname + '/static',
+  compile: compileStyl,
+  compress: true
+}));
 app.use(express.static(__dirname + '/static'));
 app.use(poet.middleware());
 app.get('/log', function(req, res) { res.render('index'); });

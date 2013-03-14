@@ -1,0 +1,99 @@
+body
+  margin 0
+  padding 0
+
+nav.main
+  margin 0
+  padding 0.5em 20px
+  font-size 2em
+  ul
+    margin 0
+    padding 0
+    li
+      display inline-block
+      list-style-type none
+      margin 0
+      padding 0
+      margin-right 2em
+      a, a:link, a:visited
+        text-decoration none
+        color maroon
+        font-family sans-serif
+
+.content
+  padding-left 20px
+  padding-right 20px
+  h3
+    a, a:link, a:visited
+      text-decoration none
+
+article
+  max-width 50em
+  header
+    h1
+      a, a:link, a:visited
+        text-decoration none
+        color red
+    .date
+      font-family monospace
+      font-weight normal
+  .content
+    code
+      font-family monospace
+      color brown
+    pre, pre.prettyprint
+      border none
+      background-color transparent
+      padding-left 2em
+  footer
+    .tags:before
+      content 'tags: '
+    .tags
+      text-transform lowercase
+      margin 0
+      padding 0
+      li
+        display inline-block
+        list-style-type none
+        margin 0
+        padding 0
+        padding-right 0.5em
+
+article.list
+  padding-top 0
+  padding-bottom 0
+  max-width 50em
+  header
+    h1
+      font-size 1em
+      display inline-block
+      margin 0
+    .date
+      display inline-block
+      margin 0
+    .date:after
+      content ' '
+
+nav.tags
+  margin 0
+  padding 0.5em 20px
+  h1
+    margin 0
+    padding 0
+    font-size 1em
+    font-weight normal
+    font-family sans-serif
+    display inline-block
+  h1:after
+    content ': '
+  ul
+    display inline
+    text-transform lowercase
+    margin 0
+    padding 0
+    li
+      display inline-block
+      list-style-type none
+      margin 0
+      padding 0
+      padding-right 0.5em
