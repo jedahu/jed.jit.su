@@ -1,6 +1,6 @@
 {
   "name": "jed.jit.su",
-  "version": "0.0.28",
+  "version": "0.0.30",
   "dependencies": {
     "send": {
       "version": "0.1.0",
